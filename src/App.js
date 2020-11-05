@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 import { GoogleSpreadsheet } from "google-spreadsheet";
@@ -22,7 +21,7 @@ const appendSpreadsheet = async (row) => {
     await doc.loadInfo();
 
     const sheet = doc.sheetsById[SHEET_ID];
-    const result = await sheet.addRow(row);
+    await sheet.addRow(row);
   } catch (e) {
     console.error('Error: ', e);
   }
